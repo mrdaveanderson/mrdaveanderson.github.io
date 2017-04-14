@@ -17,7 +17,7 @@ If your BIOS supports IPMI enable SOL under the IPMI and/or advanced area of the
 
 # GRUB2
 
-`
+```
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
 GRUB_DEFAULT=saved
@@ -29,7 +29,7 @@ GRUB_CMDLINE_LINUX="crashkernel=auto console=ttyS1,115200 console=tty0"
 GRUB_DISABLE_RECOVERY="true"
 GRUB_CMDLINE_XEN_DEFAULT="dom0_max_vcpus=4 dom0_vcpus_pin dom0_mem=1536M,max:1536M cpuinfo com1=115200,8n1 console=com1,tty loglvl=all guest_loglvl=all elevator=noop"
 GRUB_CMDLINE_LINUX_XEN_REPLACE_DEFAULT="console=hvc0 earlyprintk=xen nomodeset elevator=noop"
-`
+```
 
 # Xen
 
