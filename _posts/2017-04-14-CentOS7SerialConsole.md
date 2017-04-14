@@ -17,6 +17,22 @@ If your BIOS supports IPMI enable SOL under the IPMI and/or advanced area of the
 
 # GRUB2
 
+Most of these subitems are actually just going to be related to the GRUB2 Config, but at the GRUB2 level, there's only one part that's important here:
+
+```
+GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=1 --word=8 --parity=no --stop=1"
+GRUB_TERMINAL_OUTPUT="console serial"
+```
+
+"GRUB_TERMINAL_OUTPUT" should already exist, but probably says:
+`GRUB_TERMINAL_OUTPUT="console"`
+
+# Xen
+
+# CentOS 7
+
+# My Final GRUB2 Config:
+
 ```
 GRUB_TIMEOUT=5
 GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
@@ -24,14 +40,9 @@ GRUB_DEFAULT=saved
 GRUB_DISABLE_SUBMENU=true
 GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=1 --word=8 --parity=no --stop=1"
 GRUB_TERMINAL_OUTPUT="console serial"
-#GRUB_CMDLINE_LINUX="crashkernel=auto"
 GRUB_CMDLINE_LINUX="crashkernel=auto console=ttyS1,115200 console=tty0"
 GRUB_DISABLE_RECOVERY="true"
 GRUB_CMDLINE_XEN_DEFAULT="dom0_max_vcpus=4 dom0_vcpus_pin dom0_mem=1536M,max:1536M cpuinfo com1=115200,8n1 console=com1,tty loglvl=all guest_loglvl=all elevator=noop"
 GRUB_CMDLINE_LINUX_XEN_REPLACE_DEFAULT="console=hvc0 earlyprintk=xen nomodeset elevator=noop"
 ```
-
-# Xen
-
-# CentOS 7
 
