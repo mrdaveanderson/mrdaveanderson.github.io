@@ -81,3 +81,11 @@ GRUB_CMDLINE_LINUX_XEN_REPLACE_DEFAULT="console=hvc0 earlyprintk=xen nomodeset e
 ```
 
 This was all tested under CentOS 7.3, but should work with any version of CentOS 7.
+
+# Bonus round: connectiong via IPMITool/SOL
+After you install ipmitool on your client:
+```
+ipmitool -I lanplus -H [IP] -U ADMIN -P [PASS] sol activate
+```
+Obviously replace `[IP]` and `[PASS]` with the relevant bits of data, and you should be able to connect and see/interact with the machine on the IPMI Serial over LAN interface :)
+
