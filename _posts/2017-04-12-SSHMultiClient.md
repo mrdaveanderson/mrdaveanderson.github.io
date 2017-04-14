@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      SSHMultiClient
+title:      SSHMultiClient (Updated)
 date:       2016-08-29 01:01:01
 summary:    SSHMultiClient is a tool for quickly executing the same command to a large number of machines quickly and easily.
 categories: SSHMultiClient
@@ -55,3 +55,9 @@ Specifically that person was me, but I've since talked to a fair number of peopl
      * i.e. for update task:
        * on a debian machine the "update" task would use apt-get 
        * on a redhat machine the "update" task would use yum
+
+
+## Update
+I'm still working on this, but between injury and illness, it's been a rough last 6 months, most of the time I spend at the computer had to be spent on my day job, or other more important tasks
+
+On, the plus side, I've been testing it, and making some improvements while working. Will probably be at least a month or two until I'm happy with it enough to throw it up on github. If you'd like to test or just show interest though, hit me up on twitter.
