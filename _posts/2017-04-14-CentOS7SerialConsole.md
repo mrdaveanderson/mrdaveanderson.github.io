@@ -80,3 +80,4 @@ GRUB_CMDLINE_XEN_DEFAULT="dom0_max_vcpus=4 dom0_vcpus_pin dom0_mem=1536M,max:153
 GRUB_CMDLINE_LINUX_XEN_REPLACE_DEFAULT="console=hvc0 earlyprintk=xen nomodeset elevator=noop"
 ```
 
+This was all tested under CentOS 7.3, but should work with any version of CentOS 7.
