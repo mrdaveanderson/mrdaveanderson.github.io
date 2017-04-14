@@ -12,6 +12,13 @@ tags:
 # Adding the serial console to your life
 Why set up a serial console? Having a serial console set up is super useful if you have a machine with IPMI that supports SOL (Serial Over Lan). It's also pretty nice if you're debugging boot output on *nix-like os, because you can copy and paste bug reports, stacktraces, etc. when things go wrong (which is what actually got me to sit down and cobble together a working solution from various googling)
 
+#Before you get started
+To test which serial port you want to set for all the following stuff, there is a quick test that can be performed in CentOS 7. If you:
+```
+/sbin/agetty -L ttyS1 115200 vt100
+```
+With the other machine attached to the serial port / SOL, you should immediately see a prompt on the serial port when you run that command
+
 # BIOS (if available)
 If your BIOS supports IPMI enable SOL under the IPMI and/or advanced area of the BIOS config
 
@@ -44,7 +51,7 @@ Change it to
 ```
 GRUB_CMDLINE_XEN_DEFAULT="cpuinfo com1=115200,8n1 console=com1,tty"
 ```
-Again, we're setting up for 115,200 bps, 8/n/1, with serial and vga consoles active, modify accordingly to fit your particular situation
+Again, we're setting up for 115,200 bps, `8/n/1`, with serial and vga consoles active, modify accordingly to fit your particular situation
 
 # CentOS 7
 
