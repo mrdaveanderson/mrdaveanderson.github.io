@@ -29,7 +29,7 @@ GRUB_TERMINAL_OUTPUT="console serial"
 GRUB_TERMINAL_OUTPUT="console"
 ```
 
-So change add the `serial` portion, and paste in the extra `GRUB_SERIAL_COMMAND`. Depending on your system/SOL/intended use of you may need to alter the speed or unit (unit 1 corresponds to ttyS1), `--word=8 --parity=no --stop=1` are often referred to as `8/n/1`
+So add the `serial` portion to that line, and paste in the extra `GRUB_SERIAL_COMMAND`. Depending on your system/SOL/intended use of you may need to alter the speed or unit (unit 1 corresponds to ttyS1), `--word=8 --parity=no --stop=1` are often referred to as `8/n/1` in the serial world.
 
 Update: For some reason this config is not presently accepting input over serial (but normal VGA works as expected...I'll dig into this when I get a chance (or if anyone knows the answer let me know on twitter))
 
