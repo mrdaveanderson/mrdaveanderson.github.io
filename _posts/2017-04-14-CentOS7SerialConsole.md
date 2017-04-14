@@ -17,7 +17,7 @@ To test which serial port you want to set for all the following stuff, there is 
 ```
 /sbin/agetty -L ttyS1 115200 vt100
 ```
-With the other machine attached to the serial port / SOL, you should immediately see a prompt on the serial port when you run that command
+With the other machine attached to the serial port / SOL, you should immediately see a prompt on the serial port when you run that command (`115200` is the speed, `ttyS1` is the serial port, `vt100` is the terminal type (but you shouldn't have to modify that. You may have to modify the speed and serial port until you are able to connect properly and on the port you want)
 
 # BIOS (if available)
 If your BIOS supports IPMI enable SOL under the IPMI and/or advanced area of the BIOS config
