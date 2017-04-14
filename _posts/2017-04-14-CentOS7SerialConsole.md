@@ -40,7 +40,7 @@ So add the `serial` portion to that line, and paste in the extra `GRUB_SERIAL_CO
 
 Update: For some reason this config is not presently accepting input over serial (but normal VGA works as expected...I'll dig into this when I get a chance (or if anyone knows the answer let me know on twitter))
 
-# Xen
+# Xen (skip if you're not using Xen)
 
 Default config probably has a line that looks like 
 ```
@@ -54,8 +54,18 @@ GRUB_CMDLINE_XEN_DEFAULT="cpuinfo com1=115200,8n1 console=com1,tty"
 Again, we're setting up for 115,200 bps, `8/n/1`, with serial and vga consoles active, modify accordingly to fit your particular situation
 
 # CentOS 7
+The final piece in the chain: getting the actual OS talking over serial (and still over VGA too). Change:
 
-# My Final GRUB2 Config:
+```
+GRUB_CMDLINE_LINUX="crashkernel=auto"
+```
+ to 
+```
+GRUB_CMDLINE_LINUX="crashkernel=auto console=ttyS1,115200 console=tty0"
+```
+`console=tty0` will keep your VGA monitor working, while the `console=ttyS1,115200` portion makes serial work simultaneously.
+
+# My Final GRUB2 Config (with some other xen/centos config stuff in it that isnt relevant here):
 
 ```
 GRUB_TIMEOUT=5
