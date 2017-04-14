@@ -60,4 +60,4 @@ Specifically that person was me, but I've since talked to a fair number of peopl
 ## Update
 I'm still working on this, but between injury and illness, it's been a rough last 6 months, most of the time I spend at the computer had to be spent on my day job, or other more important tasks
 
-On, the plus side, I've been testing it, and making some improvements while working. Will probably be at least a month or two until I'm happy with it enough to throw it up on github. If you'd like to test or just show interest though, hit me up on twitter (@mrdaveanderson).
+On, the plus side, I've been testing it, and making some improvements while working. Will probably be at least a month or two until I'm happy with it enough to throw it up on github. If you'd like to test or just show interest though, hit me up on twitter.
