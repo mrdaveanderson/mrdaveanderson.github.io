@@ -12,3 +12,11 @@ tags:
 # Adding Serial to stuff
 The following is super useful if you have a machine with IPMI that supports SOL (Serial Over Lan). It's also pretty nice if you're debugging boot output on *nix-like os, because you can copy and paste bug reports, stacktraces, etc. when things go wrong (which is what actually got me to sit down and cobble together a working solution from various googling)
 
+# BIOS (if available)
+
+# GRUB2
+
+# Xen
+
+# CentOS 7
+
