@@ -35,6 +35,17 @@ Update: For some reason this config is not presently accepting input over serial
 
 # Xen
 
+Default config probably has a line that looks like 
+```
+GRUB_CMDLINE_XEN_DEFAULT="cpuinfo console=tty"
+```
+
+Change it to
+```
+GRUB_CMDLINE_XEN_DEFAULT="cpuinfo com1=115200,8n1 console=com1,tty"
+```
+Again, we're setting up for 115,200 bps, 8/n/1, with serial and vga consoles active, modify accordingly to fit your particular situation
+
 # CentOS 7
 
 # My Final GRUB2 Config:
