@@ -24,7 +24,7 @@ GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=1 --word=8 --parity=no --stop=
 GRUB_TERMINAL_OUTPUT="console serial"
 ```
 
-"GRUB_TERMINAL_OUTPUT" should already exist, but probably says:
+`GRUB_TERMINAL_OUTPUT` should already exist, but probably says:
 ```
 GRUB_TERMINAL_OUTPUT="console"
 ```
