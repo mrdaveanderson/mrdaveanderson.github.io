@@ -25,7 +25,9 @@ GRUB_TERMINAL_OUTPUT="console serial"
 ```
 
 "GRUB_TERMINAL_OUTPUT" should already exist, but probably says:
-```GRUB_TERMINAL_OUTPUT="console"```
+```
+GRUB_TERMINAL_OUTPUT="console"
+```
 
 # Xen
 
