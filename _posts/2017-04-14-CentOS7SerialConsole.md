@@ -79,6 +79,7 @@ GRUB_DEFAULT=saved
 GRUB_DISABLE_SUBMENU=true
 GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=1 --word=8 --parity=no --stop=1"
 GRUB_TERMINAL_OUTPUT="console serial"
+GRUB_TERMINAL_INPUT="console serial"
 GRUB_CMDLINE_LINUX="crashkernel=auto console=ttyS1,115200 console=tty0"
 GRUB_DISABLE_RECOVERY="true"
 GRUB_CMDLINE_XEN_DEFAULT="dom0_max_vcpus=4 dom0_vcpus_pin dom0_mem=1536M,max:1536M cpuinfo com1=115200,8n1 console=com1,tty loglvl=all guest_loglvl=all elevator=noop"
