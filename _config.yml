@@ -5,7 +5,7 @@ description: ""
 baseurl: ""
 url: "https://mrdaveanderson.github.io/"
 title_description: "A blog of random tech stuff"
-title_image: "/images/PowerIcon-256.png"
+title_image: "/images/PowerIcon.svg"
 post_limit: 8
 
 # Social usernames/URLs
