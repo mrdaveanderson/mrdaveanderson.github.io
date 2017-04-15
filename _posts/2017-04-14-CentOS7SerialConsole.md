@@ -95,3 +95,17 @@ ipmitool -I lanplus -H [IP] -U ADMIN -P [PASS] sol activate
 ```
 Obviously replace `[IP]` and `[PASS]` with the relevant bits of data, and you should be able to connect and see/interact with the machine on the IPMI Serial over LAN interface :)
 
+# Bonus round #2: setting pfSense (router/fw os/platform) up to use SOL
+pfSense has an option in System > Advanced > Admin Access > Serial Communications to enable a serial console in addition to the usual one. Enable this, config with the correct speed. If your IPMI is like mine, it wants to take over ttyS1 not ttyS0. To make pfsense use ttyS1, ssh (or use the console) to the pfSense box, open a terminal (option #8):
+
+``` 
+echo 'comconsole_port="0x2F8"' >> /boot/loader.conf.local
+```
+(it is apparently very common for ttyS1 to be at `0x2F8`, however, most IPMI will tell you the SOL addr/interupt/etc info in the bios config menu, so you should be able to use that as a fallback if a blind paste doesnt work.)
+
+What this command does is append the text `comconsole_port="0x2F8"` to the /boot/`loader.conf.local` file. If it does not exist, it will create it for you. It's important to use the `loader.conf.local` files vs the usual `loader.conf`, because the gui will walk all over whatever the contents of `loader.conf` are if you were, to say, enable the serial console in the GUI (aka the directions above), change the speed, etc. (or probably even if you just save that page in the GUI).
+
+Anyway, tangential to the original purpouse of the article...but this is where I'm keeping all my SOL knowledge for now :)
+
+Happy admining.
+
