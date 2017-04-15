@@ -6,18 +6,11 @@ baseurl: ""
 url: "https://mrdaveanderson.github.io/"
 title_description: "A blog of random tech stuff"
 title_image: "/images/PowerIcon-256.png"
-#google_analytics: "UA-20365477-4"
-#disqus_account: cartenoire
-#github_repository: https://github.com/jacobtomlinson/carte-noire
-#addthis_id: ra-513c6fa83da6ec67
-post_limit: 5
+post_limit: 8
 
 # Social usernames/URLs
 twitter_username: "mrdaveanderson"
-github_username:  "mrdaveanderson"
-#linkedin_link: 
-#google_plus_link: 
-#stackoverflow_link: 
+github_username: "mrdaveanderson"
 
 # Footer
 footer_left: "Jekyll <a href=\"https://github.com/jacobtomlinson/carte-noire\">page theme</a> by <a href=\"https://twitter.com/_JacobTomlinson\">Jacob Tomlinson</a>"
