@@ -10,7 +10,7 @@ tags:
 ---
 
 # Adding the serial console to your life
-Why set up a serial console? Having a serial console set up is super useful if you have a machine with IPMI that supports SOL (Serial Over Lan). It's also pretty nice if you're debugging boot output on *nix-like os, because you can copy and paste bug reports, stacktraces, etc. when things go wrong (which is what actually got me to sit down and cobble together a working solution from various googling)
+Why set up a serial console? Having a serial console set up is super useful if you have a machine with IPMI that supports SOL (Serial Over Lan). It's also pretty nice if you're debugging boot output on *nix-like os, because you can copy and paste bug reports, stack traces, etc. when things go wrong (which is what actually got me to sit down and cobble together a working solution from various googling)
 
 #Before you get started
 To test which serial port you want to set for all the following stuff, there is a quick test that can be performed in CentOS 7. If you run:
@@ -70,7 +70,7 @@ GRUB_CMDLINE_LINUX="crashkernel=auto console=ttyS1,115200 console=tty0"
 ```
 `console=tty0` will keep your VGA monitor working, while the `console=ttyS1,115200` portion makes serial work simultaneously.
 
-# My Final GRUB2 Config (with some other xen/centos config stuff in it that isnt relevant here):
+# My Final GRUB2 config (with some other Xen/CentOS config stuff in it that isn't relevant here):
 
 ```
 GRUB_TIMEOUT=5
@@ -88,15 +88,15 @@ GRUB_CMDLINE_LINUX_XEN_REPLACE_DEFAULT="console=hvc0 earlyprintk=xen nomodeset e
 
 This was all tested under CentOS 7.3, but should work with any version of CentOS 7.
 
-# Bonus round: connectiong via IPMITool/SOL
+# Bonus round: connecting via IPMITool/SOL
 After you install ipmitool on your client:
 ```
 ipmitool -I lanplus -H [IP] -U ADMIN -P [PASS] sol activate
 ```
 Obviously replace `[IP]` and `[PASS]` with the relevant bits of data, and you should be able to connect and see/interact with the machine on the IPMI Serial over LAN interface :)
 
-# Bonus round #2: setting pfSense (router/fw os/platform) up to use SOL
-pfSense has an option in System > Advanced > Admin Access > Serial Communications to enable a serial console in addition to the usual one. Enable this, config with the correct speed. If your IPMI is like mine, it wants to take over `ttyS1` not `ttyS0`. To make pfsense use `ttyS1`, rather than the default of `ttyS0` do the following:
+# Bonus round #2: setting pfSense (router/firewall os/platform) up to use SOL
+pfSense has an option in System > Advanced > Admin Access > Serial Communications to enable a serial console in addition to the usual one. Enable this, config with the correct speed. If your IPMI is like mine, it wants to take over `ttyS1` not `ttyS0`. To make pfSense use `ttyS1`, rather than the default of `ttyS0` do the following:
 
 ssh (or use the console) to the pfSense box, open a terminal (option #8):
 
@@ -106,9 +106,9 @@ echo 'comconsole_port="0x2F8"' >> /boot/loader.conf.local
 
 What this command does is append the text `comconsole_port="0x2F8"` to the /boot/`loader.conf.local` file. If it does not exist, it will create it for you. It's important to use the `loader.conf.local` files vs the usual `loader.conf`, because the gui will walk all over whatever the contents of `loader.conf` are if you were, to say, enable the serial console in the GUI (aka the directions above), change the speed, etc. (or probably even if you just save that page in the GUI).  
 
-(it is apparently very common for `ttyS1` to be at `0x2F8`, however, most IPMI will tell you the SOL addr/interupt/etc info in the bios config menu, so you should be able to use that as a fallback if a blind paste doesnt work.)
+(it is apparently very common for `ttyS1` to be at `0x2F8`, however, most IPMI will tell you the SOL address/interrupt/etc info in the bios config menu, so you should be able to use that as a fallback if a blind paste doesn't work.)
 
-Anyway, tangential to the original purpouse of the article...but this is where I'm keeping all my SOL knowledge for now :)
+Anyway, tangential to the original purpose of the article...but this is where I'm keeping all my SOL knowledge for now :)
 
-Happy admining.
+Happy admining!
 
