@@ -103,9 +103,10 @@ ssh (or use the console) to the pfSense box, open a terminal (option #8):
 ``` 
 echo 'comconsole_port="0x2F8"' >> /boot/loader.conf.local
 ```
-(it is apparently very common for `ttyS1` to be at `0x2F8`, however, most IPMI will tell you the SOL addr/interupt/etc info in the bios config menu, so you should be able to use that as a fallback if a blind paste doesnt work.)
 
-What this command does is append the text `comconsole_port="0x2F8"` to the /boot/`loader.conf.local` file. If it does not exist, it will create it for you. It's important to use the `loader.conf.local` files vs the usual `loader.conf`, because the gui will walk all over whatever the contents of `loader.conf` are if you were, to say, enable the serial console in the GUI (aka the directions above), change the speed, etc. (or probably even if you just save that page in the GUI).
+What this command does is append the text `comconsole_port="0x2F8"` to the /boot/`loader.conf.local` file. If it does not exist, it will create it for you. It's important to use the `loader.conf.local` files vs the usual `loader.conf`, because the gui will walk all over whatever the contents of `loader.conf` are if you were, to say, enable the serial console in the GUI (aka the directions above), change the speed, etc. (or probably even if you just save that page in the GUI).  
+
+(it is apparently very common for `ttyS1` to be at `0x2F8`, however, most IPMI will tell you the SOL addr/interupt/etc info in the bios config menu, so you should be able to use that as a fallback if a blind paste doesnt work.)
 
 Anyway, tangential to the original purpouse of the article...but this is where I'm keeping all my SOL knowledge for now :)
 
