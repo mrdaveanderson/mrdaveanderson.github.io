@@ -1,16 +1,15 @@
 ---
 layout:     post
-title:      Carte Noire Example
-date:       2014-06-10 12:31:19
+title:      Example Theme Post
+date:       2000-01-01 00:00:00
 summary:    See what the different elements looks like.
-categories: jekyll
-thumbnail: cogs
+categories: 
+thumbnail: 
 tags:
- - demo
- - action
- - carte
- - noire
 ---
+
+## **TEMP** This page is just here until I've used enough of the random syntax below that I can remove this reference
+
 
 **Note** - This article is a derivative of ["See pixyll in action"][1], taken from the lovely jekyll theme [pixyll][4].
 
