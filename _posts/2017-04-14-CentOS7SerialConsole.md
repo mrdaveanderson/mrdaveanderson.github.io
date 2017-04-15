@@ -96,7 +96,7 @@ ipmitool -I lanplus -H [IP] -U ADMIN -P [PASS] sol activate
 Obviously replace `[IP]` and `[PASS]` with the relevant bits of data, and you should be able to connect and see/interact with the machine on the IPMI Serial over LAN interface :)
 
 # Bonus round #2: setting pfSense (router/fw os/platform) up to use SOL
-pfSense has an option in System > Advanced > Admin Access > Serial Communications to enable a serial console in addition to the usual one. Enable this, config with the correct speed. If your IPMI is like mine, it wants to take over ttyS1 not ttyS0. To make pfsense use ttyS1, rather than the default of ttyS0 do the following:
+pfSense has an option in System > Advanced > Admin Access > Serial Communications to enable a serial console in addition to the usual one. Enable this, config with the correct speed. If your IPMI is like mine, it wants to take over `ttyS1` not `ttyS0`. To make pfsense use `ttyS1`, rather than the default of `ttyS0` do the following:
 
 ssh (or use the console) to the pfSense box, open a terminal (option #8):
 
